@@ -19,6 +19,6 @@ jobs:
         with:
           command: addpath("scripts");
       - name: Setup path
-        uses: matlab-actions/run-command@v1
+        uses: ./
         with:
           command: covid_patients;
