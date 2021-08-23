@@ -21,7 +21,7 @@ opts = setvaropts(opts, ["Pref", "Municipalities", "Remarks"], "EmptyFieldRule",
 opts = setvaropts(opts, "InspectionDate", "InputFormat", "yyyy/MM/dd");
 
 % データのインポート
-naganocovid19testcount = readtable("../csv/200000_nagano_covid19_test_count.csv", opts);
+naganocovid19testcount = readtable("csv/200000_nagano_covid19_test_count.csv", opts);
 
 
 %% 一時変数のクリア
