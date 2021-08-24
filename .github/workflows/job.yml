@@ -1,7 +1,7 @@
 name: Run MATLAB Script on GitHub-Hosted Runner
 on:
   schedule:
-    - cron: * 12 * * *
+    - cron: "* 12 * * *"
   push:
     branches:
       - master
