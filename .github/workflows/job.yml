@@ -18,3 +18,9 @@ jobs:
         uses: matlab-actions/run-command@v1
         with:
           command: addpath("scripts"), covid_patients;
+  commit-changes:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo test
+        run: echo ${{ secrets.TEST }}
