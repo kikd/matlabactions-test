@@ -9,8 +9,8 @@ jobs:
   my-job:
     name: Run MATLAB Script
     runs-on: ubuntu-latest
-      env:
-        TZ: 'Asia/Tokyo'
+    env:
+      TZ: 'Asia/Tokyo'
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
