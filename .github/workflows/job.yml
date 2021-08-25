@@ -20,9 +20,9 @@ jobs:
           command: addpath("scripts"), covid_patients;
       - name: Commit files
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -m "Add changes" -a
+          git config --local user.email ${{ secrets.EMAIL }}
+          git config --local user.name "kikd.bot"
+          git commit -m "data update(`date +%Y/%m/%d`)"" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
