@@ -19,4 +19,4 @@ jobs:
         with:
           command: addpath("scripts"), covid_patients;
       - name: echo test
-        run: echo ${{ secrets.TEST }}
+        run: echo ${{ secrets.GITHUB_TOKEN }}
