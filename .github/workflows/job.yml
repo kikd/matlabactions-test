@@ -22,7 +22,7 @@ jobs:
         run: |
           git config --local user.email ${{ secrets.EMAIL }}
           git config --local user.name "kikd.bot"
-          git status | grep modified && git commit -m "data update(`date +%Y/%m/%d`)" -a
+          git status | grep modified && git commit -m "data update(`date +%Y/%m/%d`)" -a || true
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
