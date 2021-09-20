@@ -1,5 +1,6 @@
 name: Run MATLAB Script on GitHub-Hosted Runner
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
