@@ -29,6 +29,7 @@ opts = setvaropts(opts, "ConfirmedDate", "InputFormat", "yyyy/MM/dd");
 % nagano_covid19_patients = readtable("csv/200000_nagano_covid19_patients.csv", opts);
 
 % run simulink model simulation
+%{
 display('run simulation.');
 tic
 load_system('model/testmodel');
@@ -38,7 +39,7 @@ toc
 save('data/dummy.mat', 'dummy');
 % memo:不正行を削除するのは、rmmissing関数を使用する。
 % nagano_covid19_patients = rmmissing(nagano_covid19_patients)
-
+%}
 
 
 %% 一時変数のクリア
