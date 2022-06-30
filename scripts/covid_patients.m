@@ -1,7 +1,3 @@
-
-
-%% ホームページからCSVファイルを取得
-% websave('csv/200000_nagano_covid19_patients.csv','https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv');
 display(length(ver));
 listfonts
 isjava = usejava('awt')
@@ -12,44 +8,12 @@ y = sin(x);
 plot(x,y);
 t = text(pi,0,'\leftarrow テストsin(\pi)');
 saveas(f, "test.png");
-listfonts
+% listfontsでは出てこないけど使えるのか？
+t.FontName='Noto Serif CJK JP';
+saveas(f, "test2.png");
+
+%listfonts
 ver
-%% インポート オプションの設定およびデータのインポート
-opts = delimitedTextImportOptions("NumVariables", 15);
-
-% 範囲と区切り記号の指定
-opts.DataLines = [3, Inf];
-opts.Delimiter = ",";
-
-% 列名と型の指定
-opts.VariableNames = ["No", "LocalGovCode", "Pref", "Municipalities", "ConfirmedDate", "OnsetDate", "Residence", "Age", "Gender", "Job", "Condition", "Symptom", "Traveled", "Discharged", "Remarks"];
-opts.VariableTypes = ["double", "double", "string", "string", "datetime", "string", "string", "string", "string", "string", "string", "string", "double", "double", "string"];
-
-% ファイル レベルのプロパティを指定
-opts.ExtraColumnsRule = "ignore";
-opts.EmptyLineRule = "read";
-
-% 変数プロパティを指定
-opts = setvaropts(opts, ["Pref", "Municipalities", "OnsetDate", "Residence", "Age", "Gender", "Job", "Condition", "Symptom", "Remarks"], "WhitespaceRule", "preserve");
-opts = setvaropts(opts, ["Pref", "Municipalities", "OnsetDate", "Residence", "Age", "Gender", "Job", "Condition", "Symptom", "Remarks"], "EmptyFieldRule", "auto");
-opts = setvaropts(opts, "ConfirmedDate", "InputFormat", "yyyy/MM/dd");
-
-% データのインポート
-% nagano_covid19_patients = readtable("csv/200000_nagano_covid19_patients.csv", opts);
-
-% run simulink model simulation
-%{
-display('run simulation.');
-tic
-load_system('model/testmodel');
-sim('model/testmodel');
-close_system('model/testmodel');
-toc
-save('data/dummy.mat', 'dummy');
-% memo:不正行を削除するのは、rmmissing関数を使用する。
-% nagano_covid19_patients = rmmissing(nagano_covid19_patients)
-%}
-
 
 %% 一時変数のクリア
-clear opts
+clear 
