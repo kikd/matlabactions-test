@@ -3,6 +3,9 @@
 %% ホームページからCSVファイルを取得
 % websave('csv/200000_nagano_covid19_patients.csv','https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv');
 display(length(ver));
+isjava = usejava('awt')
+fontlist = com.mathworks.mwswing.FontUtils.getFontNames.toArray();
+
 listfonts
 ver
 %% インポート オプションの設定およびデータのインポート
