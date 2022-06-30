@@ -1,6 +1,7 @@
 % この関数ではNoto Fontが出てこない
 listfonts
-isjava = usejava('awt')
+disp(["usejava('awt')", string(usejava('awt'))]);
+disp(["usejava('jvm')", string(usejava('jvm'))]);
 % この非公開APIにを使うとNoto Fontが表示される。(ということは使える可能性がある？！)
 fontlist = com.mathworks.mwswing.FontUtils.getFontNames.toArray();
 fonts = cell(fontlist)
