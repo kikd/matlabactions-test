@@ -11,8 +11,8 @@ jobs:
     env:
       TZ: 'Asia/Tokyo'
     steps:
-      - name: Install font
-        run: sudo apt install fonts-noto -y
+#      - name: Install font
+#        run: sudo apt install fonts-noto -y
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Set up MATLAB
