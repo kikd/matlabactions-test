@@ -22,7 +22,7 @@ jobs:
       - name: Run Script
         uses: matlab-actions/run-command@v1
         with:
-          command: addpath("scripts"), covid_patients;
+          command: addpath("scripts"), NoMoreTofu;
       - name: Commit files
         run: |
           date
