@@ -3,14 +3,16 @@
 %% ホームページからCSVファイルを取得
 % websave('csv/200000_nagano_covid19_patients.csv','https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv');
 display(length(ver));
+listfonts
 isjava = usejava('awt')
 fontlist = com.mathworks.mwswing.FontUtils.getFontNames.toArray()
 f = figure();
+%{
 x = 0:pi/20:2*pi;
 y = sin(x);
 plot(x,y);
 t = text(pi,0,'\leftarrow テストsin(\pi)');
-
+%}
 listfonts
 ver
 %% インポート オプションの設定およびデータのインポート
