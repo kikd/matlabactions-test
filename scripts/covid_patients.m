@@ -11,6 +11,7 @@ x = 0:pi/20:2*pi;
 y = sin(x);
 plot(x,y);
 t = text(pi,0,'\leftarrow テストsin(\pi)');
+saveas(f, "test.png");
 listfonts
 ver
 %% インポート オプションの設定およびデータのインポート
